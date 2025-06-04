@@ -11,15 +11,27 @@ const capitals = {
     Hungary: 'Budapest',
     Ireland: 'Dublin'
   };
-
-  const keys = Object.keys(capitals);
-  console.log(keys);
   
   function getCapital(country) {
     // insert code
-    let encontrado = false;
+    let found = false;
+    let capital = "";
 
-    
+    for(const key in capitals){
+      if( key == country){
+        found = true;
+        capital = capitals[key];
+      }
+    }
+
+    if(found == false){
+      capital = "This country isn't in the list. Therefore not capital found."
+    } else {
+      return capital;
+    }
   }
+
+  console.log(getCapital("Ireland"));
+
   
   
